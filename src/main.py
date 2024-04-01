@@ -9,14 +9,19 @@ def main():
     library = LibraryDB()
     library.create_tables()
 
-    sam = User()
+    # sam = User()
     # sam.register_user("sam", "sam@gmail.com", "Fe42@fewe12")
 
     # print(UserModel("sam", "sam@gmail.com", "Fe42@fewe12").authenticate())
-    sam.login_user("sam@gmail.com", "Fe42@fewe12")
-    sam.logout_user()
+    # sam.login_user("sam@gmail.com", "Fe42@fewe12")
+    # sam.logout_user()
 
-    Book.search_book(author="No author")
+    # Book.add_book("Great Book", "Jim", "Fiction")
+    # Book.remove_book("2151fc80-a8df-4183-8723-5ce94cd73454")
+    # print(Book.get_book_list())
+
+    Book.search_book(title="Book1")
+
     library.close_connection()
 
 
