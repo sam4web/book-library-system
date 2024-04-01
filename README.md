@@ -1,6 +1,6 @@
-## Book Library System Project:
+# Book Library System Project:
 
-### Overview:
+## Overview:
 
 A Book Library System is a command-line application designed to manage a collection of books in a library. It allows
 librarians or users to perform various operations related to book management, such as adding new books, viewing existing
@@ -33,3 +33,11 @@ books, searching for books, borrowing and returning books, and more.
 
 6. **User Interface:**
    - **CLI Interface:** Design a user-friendly command-line interface with clear menus, prompts, and options for users to navigate and interact with the system efficiently.
+
+## Contributions
+
+Contributions are welcome! If you have ideas for improvements or new features, feel free to submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
