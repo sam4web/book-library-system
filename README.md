@@ -1,4 +1,4 @@
-# Book Library System Project:
+# Book Library System Project
 
 ## Overview:
 
