@@ -1,5 +1,9 @@
+from db.database import Library
+
+
 def main():
-    print("Hello, World!")
+    library = Library()
+    library.create_tables()
 
 
 if __name__ == "__main__":
