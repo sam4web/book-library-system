@@ -2,9 +2,7 @@
 
 ## Overview:
 
-A Book Library System is a command-line application designed to manage a collection of books in a library. It allows
-librarians or users to perform various operations related to book management, such as adding new books, viewing existing
-books, searching for books, borrowing and returning books, and more.
+Book Library System is a command-line application designed to manage a collection of books in a library. It allows users to perform various operations related to book management, such as adding new books, viewing existing books, searching for books, borrowing and returning books, and more.
 
 ## Features:
 
