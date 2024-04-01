@@ -6,7 +6,7 @@ from utils.validation import *
 db = LibraryDB()
 
 
-class User:
+class UserController:
     def __init__(self):
         self.user = None
 
