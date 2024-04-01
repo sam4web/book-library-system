@@ -6,7 +6,7 @@ from src.utils.validation import *
 db = LibraryDB()
 
 
-class User:
+class UserModel:
     def __init__(self, username, email, password):
         self.ID = str(uuid.uuid4())
         self.username = username
@@ -20,7 +20,7 @@ class User:
         is_authenticated = verify_password(self.password, user[3])
         return is_authenticated
 
-    def save_to_db(self):
+    def save(self):
         existing_user = db.execute_query_one(
             "SELECT * FROM user WHERE email LIKE ?", (self.email,)
         )
