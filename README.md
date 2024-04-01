@@ -35,7 +35,7 @@ cd book_library_system
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate # Activate virtual environment (Linux/Mac)
+source venv/Scripts/activate
 ```
 
 4. Install dependencies:
@@ -53,14 +53,6 @@ python src/main.py
 ```
 
 2. Follow the on-screen instructions to interact with the Book Library System. You can add books, view books, search for books, borrow and return books, etc.
-
-## Testing (Optional):
-
-1. Run tests:
-
-```bash
-python -m unittest discover tests
-```
 
 ### Notes:
 
