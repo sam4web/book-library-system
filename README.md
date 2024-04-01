@@ -51,7 +51,7 @@ pip install -r src/requirements.txt
 python src/main.py
 ```
 
-2. Follow the on-screen instructions to interact with the Book Library System. You can add books, view books, search for books, borrow and return books, etc.
+2. Follow the on-screen instructions to interact with the Book Library System. You can add books, view books, search for books, etc.
 
 ### Notes:
 
