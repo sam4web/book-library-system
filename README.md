@@ -8,9 +8,8 @@ Book Library System is a command-line application designed to manage a collectio
 
 - **User Authentication**: Users can create an account with a unique username and password to access the library system securely.
 - **Add Books**: Easily add new books to the library by providing title, author, genre, and publication year information.
-- **View Books**: View all available books in the library along with their details such as title, author, genre, and availability status.
+- **View Books**: View all books in the library along with their details such as title, author, and genre.
 - **Search Books**: Search for books by title, author, or genre to quickly find the desired book.
-- **Borrow and Return Books**: Borrow books from the library and mark them as borrowed. Return borrowed books to make them available again for other users.
 
 ## Prerequisites:
 

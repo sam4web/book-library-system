@@ -7,13 +7,12 @@ db = LibraryDB()
 
 
 class BookModel:
-    def __init__(self, title, author, genre, available=True):
+    def __init__(self, title, author, genre):
         self.book_data = {
             "ID": str(uuid.uuid4()),
             "title": title,
             "author": author,
             "genre": genre,
-            "available": available,
             "added_at": get_current_time(),
         }
 
@@ -24,7 +23,7 @@ class BookModel:
 
     def save(self):
         db.execute_insert_query(
-            "INSERT INTO book VALUES (:ID, :title, :author, :genre, :available, :added_at)",
+            "INSERT INTO book VALUES (:ID, :title, :author, :genre, :added_at)",
             self.book_data,
         )
 

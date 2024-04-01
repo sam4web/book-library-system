@@ -1,9 +1,13 @@
+import getpass
+
 from views.messages import Messages
+from controllers.book import BookController
+from controllers.user import UserController
 
 
-class Menu:
-    def __init__(self, controller):
-        self.controller = controller
+class BookMenu:
+    def __init__(self):
+        self.controller = BookController()
 
     def display_book_menu(self):
         while True:
@@ -37,3 +41,27 @@ class Menu:
             self.controller.search_book(genre=genre)
         else:
             print(Messages.invalid_choice())
+
+
+class UserMenu:
+    def __init__(self):
+        self.controller = UserController()
+
+    def display_login_menu(self):
+        while True:
+            choice = input(Messages.login_menu())
+            if choice == "1":
+                email = input("\nEnter email: ")
+                password = getpass.getpass(prompt="Enter password: ")
+                user = self.controller.login_user(email, password)
+                if user:
+                    break
+            elif choice == "2":
+                username = input("\nEnter username: ")
+                email = input("Enter email: ")
+                password = getpass.getpass(prompt="Enter password: ")
+                user = self.controller.register_user(username, email, password)
+                if user:
+                    break
+            else:
+                print(Messages.invalid_choice())

@@ -1,5 +1,5 @@
 from db.database import LibraryDB
-
+from views.messages import Messages
 from models.user import UserModel
 from utils.validation import *
 
@@ -13,10 +13,10 @@ class UserController:
     @staticmethod
     def validate(email, password):
         if not validate_email(email):
-            print("Enter a valid email.")
+            print("\nEnter a valid email.")
             return False
         if not validate_password(password):
-            print("Enter a valid password.")
+            print("\nEnter a valid password.")
             return False
         return True
 
@@ -24,23 +24,24 @@ class UserController:
         if not self.validate(email, password):
             return
 
-        user = UserModel(email, password, username).save()
+        user = UserModel(email, password, username)
+        if user.get_user():
+            print(Messages.user_exists(username))
+            return
+        user.save()
         if user:
             self.user = user
-            print(f'User "{username}" successfully created.')
+            print(Messages.user_created(username))
+            return user
 
     def login_user(self, email, password):
         if not self.validate(email, password):
             return
+
         user = UserModel(email, password)
         if user.authenticate():
             self.user = user.get_user()
-            print("Valid")
+            print(Messages.login_successfully(self.user[1]))
+            return self.user
         else:
-            print("Invalid")
-
-    def logout_user(self):
-        if not self.user:
-            print("No user")
-            return
-        self.user = None
+            print("Invalid Password")

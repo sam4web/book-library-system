@@ -13,11 +13,25 @@ class Messages:
 Enter your choice:  """
 
     @staticmethod
-    def login_message():
+    def login_menu():
         return """\nYou need to be logged in to continue. Please choose:
     1. To log in existing account
     2. Create new account (if don't have one)
-    Enter your choice: """
+Enter your choice: """
+
+    @staticmethod
+    def login_successfully(username):
+        return f"\nUser '{username}' has been logged in successfully."
+
+    @staticmethod
+    def user_created(username):
+        return f"\nUser '{username}' has been created successfully."
+
+    @staticmethod
+    def user_exists(username):
+        return (
+            f"\nUser with name '{username}' already exists. Please try something else."
+        )
 
     @staticmethod
     def search_book():

@@ -26,7 +26,6 @@ class LibraryDB:
                 title VARCHAR(150) NOT NULL,
                 author VARCHAR(150) NOT NULL,
                 genre VARCHAR(150) NOT NULL,
-                available BOOLEAN DEFAULT TRUE,
                 added_at VARCHAR(150) NOT NULL
             )"""
         )
