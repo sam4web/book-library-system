@@ -1,8 +1,8 @@
-from src.db.database import LibraryDB
-from src.models.book import BookModel
-from src.models.user import UserModel
-from src.services.book import Book
-from src.services.user import User
+from db.database import LibraryDB
+from models.book import BookModel
+from models.user import UserModel
+from services.book import Book
+from services.user import User
 
 
 def main():

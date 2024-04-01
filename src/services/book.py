@@ -1,6 +1,6 @@
-from src.db.database import LibraryDB
+from db.database import LibraryDB
 
-from src.models.book import BookModel
+from models.book import BookModel
 
 db = LibraryDB()
 

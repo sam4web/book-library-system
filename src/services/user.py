@@ -1,7 +1,7 @@
-from src.db.database import LibraryDB
+from db.database import LibraryDB
 
-from src.models.user import UserModel
-from src.utils.validation import *
+from models.user import UserModel
+from utils.validation import *
 
 db = LibraryDB()
 

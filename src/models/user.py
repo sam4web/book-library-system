@@ -1,7 +1,7 @@
 import uuid
 
-from src.db.database import LibraryDB
-from src.utils.validation import *
+from db.database import LibraryDB
+from utils.validation import *
 
 db = LibraryDB()
 
