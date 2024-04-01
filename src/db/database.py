@@ -23,7 +23,7 @@ class LibraryDB:
         self.__cur.execute(
             """CREATE TABLE IF NOT EXISTS book (
                 ID INT NOT NULL PRIMARY KEY,
-                TITLE VARCHAR(150) NOT NULL,
+                title VARCHAR(150) NOT NULL,
                 author VARCHAR(150) NOT NULL,
                 genre VARCHAR(150) NOT NULL,
                 available BOOLEAN DEFAULT TRUE,
@@ -34,7 +34,7 @@ class LibraryDB:
         self.__conn.commit()
         self.__conn.close()
 
-    def execute_query(self, query, params):
+    def execute_query(self, query, params=None):
         if params:
             self.__cur.execute(query, params)
         else:
@@ -44,7 +44,7 @@ class LibraryDB:
         self.__conn.commit()
         return result
 
-    def execute_query_one(self, query, params):
+    def execute_query_one(self, query, params=None):
         if params:
             self.__cur.execute(query, params)
         else:
@@ -54,7 +54,7 @@ class LibraryDB:
         self.__conn.commit()
         return result
 
-    def execute_insert_query(self, query, params):
+    def execute_insert_query(self, query, params=None):
         if params:
             self.__cur.execute(query, params)
         else:

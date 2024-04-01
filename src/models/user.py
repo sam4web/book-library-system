@@ -30,12 +30,13 @@ class UserModel:
 
         db.execute_insert_query(
             "INSERT INTO user VALUES(:ID, :username, :email, :password_hash)",
-            (
-                {
-                    "ID": self.ID,
-                    "username": self.username,
-                    "email": self.email,
-                    "password_hash": hash_password(self.password),
-                }
-            ),
+            {
+                "ID": self.ID,
+                "username": self.username,
+                "email": self.email,
+                "password_hash": hash_password(self.password),
+            },
         )
+
+        user = db.execute_query_one("SELECT * FROM user WHERE ID LIKE ?", (self.ID,))
+        return user
