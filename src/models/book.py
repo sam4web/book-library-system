@@ -1,7 +1,7 @@
 import uuid
 
-from src.db.database import LibraryDB
-from src.utils.date import get_current_time
+from db.database import LibraryDB
+from utils.date import get_current_time
 
 db = LibraryDB()
 

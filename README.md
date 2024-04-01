@@ -6,31 +6,75 @@ Book Library System is a command-line application designed to manage a collectio
 
 ## Features:
 
-1. **User Authentication:** Optionally, implement user authentication to ensure that only authorized users can access certain functionalities.
+- **User Authentication**: Users can create an account with a unique username and password to access the library system securely.
+- **Add Books**: Easily add new books to the library by providing title, author, genre, and publication year information.
+- **View Books**: View all available books in the library along with their details such as title, author, genre, and availability status.
+- **Search Books**: Search for books by title, author, or genre to quickly find the desired book.
+- **Borrow and Return Books**: Borrow books from the library and mark them as borrowed. Return borrowed books to make them available again for other users.
 
-2. **Book Management Functions:**
+## Prerequisites:
 
-   - **Add New Books:** Allow users to add new books to the library by providing book details such as title, author, genre, publication year, etc.
-   - **View Books:** Display the list of all books available in the library, along with their details such as title, author, availability status, etc.
-   - **Search Books:** Implement search functionality to allow users to search for books by various criteria such as title, author, genre, publication year, etc.
-   - **Borrowing and Returning Books:** Enable users to borrow books from the library and return them when they are done.
+- Python 3 installed on your system.
+- SQLite installed (usually comes pre-installed with Python).
 
-3. **User Management Functions:**
+## Installation:
 
-   - **Register New Users:** Allow new users to register an account with the library system.
-   - **View User Details:** Provide functionality for users to view their account details, including borrowed books.
+1. Clone the repository:
 
-4. **Data Persistence:**
+```bash
+git clone <repository-url>
+```
 
-   - **Database Integration:** Integrate a database (SQLite) to store book data, user information, borrowing history, etc.
+2. Navigate to the project directory:
 
-5. **Error Handling:**
+```bash
+cd book_library_system
+```
 
-   - **Input Validation:** Implement input validation to handle invalid inputs and prevent data corruption or security vulnerabilities.
-   - **Exception Handling:** Use exception handling to gracefully handle errors and exceptions that may occur during program execution.
+3. (Optional) Set up a virtual environment:
 
-6. **User Interface:**
-   - **CLI Interface:** Design a user-friendly command-line interface with clear menus, prompts, and options for users to navigate and interact with the system efficiently.
+```bash
+python3 -m venv venv
+source venv/bin/activate # Activate virtual environment (Linux/Mac)
+```
+
+4. Install dependencies:
+
+```bash
+pip install -r src/requirements.txt
+```
+
+## Usage:
+
+1. Run the application:
+
+```bash
+python src/main.py
+```
+
+2. Follow the on-screen instructions to interact with the Book Library System. You can add books, view books, search for books, borrow and return books, etc.
+
+## Testing (Optional):
+
+1. Run tests:
+
+```bash
+python -m unittest discover tests
+```
+
+### Notes:
+
+- Modify the src/main.py file or add more functionality as needed for your specific requirements.
+
+- Make sure you have SQLite installed on your system for the database functionality to work properly.
+
+## Deactivation (Optional):
+
+1. If you used a virtual environment, deactivate it once you're done:
+
+```bash
+deactivate # Deactivate virtual environment
+```
 
 ## Contributions
 

@@ -1,6 +1,6 @@
-from src.db.database import LibraryDB
-from src.models.book import BookModel
-from src.models.user import UserModel
+from db.database import LibraryDB
+from models.book import BookModel
+from models.user import UserModel
 
 
 def main():
