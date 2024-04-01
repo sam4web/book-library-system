@@ -1,25 +1,22 @@
-from db.database import LibraryDB
-from models.book import BookModel
-from models.user import UserModel
+from src.db.database import LibraryDB
+from src.models.book import BookModel
+from src.models.user import UserModel
+from src.services.book import Book
+from src.services.user import User
 
 
 def main():
     library = LibraryDB()
-    # library.create_tables()
-    # user = UserModel("jim", "jim@gmail.com", "fr34!@rrd33")
-    # user.login_user("sam", "sam@gmail.com")
-    # user.save()
-    # print(user.authenticate())
+    library.create_tables()
 
-    great_gatsby = BookModel(
-        title="The Great Gatsby", author="F. Scott Fitzgerald", genre="Fiction"
-    )
-    jane_eyre = BookModel(
-        title="Jane Eyre", author="Charlotte Brontë", genre="Gothic romance"
-    )
-    # great_gatsby.save()
-    # jane_eyre.save()
+    sam = User()
+    # sam.register_user("sam", "sam@gmail.com", "Fe42@fewe12")
 
+    # print(UserModel("sam", "sam@gmail.com", "Fe42@fewe12").authenticate())
+    sam.login_user("sam@gmail.com", "Fe42@fewe12")
+    sam.logout_user()
+
+    Book.search_book(author="No author")
     library.close_connection()
 
 

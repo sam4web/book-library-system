@@ -1,32 +1,38 @@
 import uuid
 
-from db.database import LibraryDB
-from utils.validation import *
+from src.db.database import LibraryDB
+from src.utils.validation import *
 
 db = LibraryDB()
 
 
 class UserModel:
-    def __init__(self, username, email, password):
+    def __init__(
+        self,
+        email,
+        password,
+        username=None,
+    ):
         self.ID = str(uuid.uuid4())
         self.username = username
         self.email = email
         self.password = password
 
-    def authenticate(self):
+    def get_user(self):
         user = db.execute_query_one(
-            "SELECT * FROM user WHERE username LIKE ?", (self.username,)
+            "SELECT * FROM user WHERE email LIKE ?", (self.email,)
         )
+        return user
+
+    def authenticate(self):
+        user = self.get_user()
         is_authenticated = verify_password(self.password, user[3])
         return is_authenticated
 
     def save(self):
-        existing_user = db.execute_query_one(
-            "SELECT * FROM user WHERE email LIKE ?", (self.email,)
-        )
-        if existing_user:
+        if self.get_user():
             print(f"User already exists")
-            return
+            return None
 
         db.execute_insert_query(
             "INSERT INTO user VALUES(:ID, :username, :email, :password_hash)",
